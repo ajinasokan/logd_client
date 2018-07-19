@@ -3,6 +3,3 @@ description: Dart client for Logd
 version: 0.0.1
 author: Ajin Asokan
 homepage: https://ajinasokan.com/logd
-
-dependencies:
-  http: 0.11.3+17
