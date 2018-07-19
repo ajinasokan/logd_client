@@ -9,13 +9,13 @@ class ConsoleLine {
   }
 }
 
-class Request {
+class LogdRequest {
   String url;
   Map<String, String> headers;
   String method;
   String body;
 
-  Request(
+  LogdRequest(
     this.method,
     this.url, {
     this.headers,
@@ -32,19 +32,19 @@ class Request {
   }
 }
 
-class Response {
+class LogdResponse {
   Map<String, String> headers;
   String body;
   int status;
 
-  Response({
+  LogdResponse({
     this.headers,
     this.body,
     this.status,
   });
 
-  factory Response.fromMap(Map<String, dynamic> responseMap) {
-    return Response(
+  factory LogdResponse.fromMap(Map<String, dynamic> responseMap) {
+    return LogdResponse(
       headers: responseMap["headers"].cast<String, String>(),
       body: responseMap["body"],
       status: responseMap["status"],

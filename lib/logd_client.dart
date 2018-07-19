@@ -108,12 +108,12 @@ class Storage {
 }
 
 class Network {
-  static Future<Response> send(Request request) async {
+  static Future<LogdResponse> send(LogdRequest request) async {
     var responseMap = json.decode(await post(
       buildURL(_host, _port, "network"),
       json.encode(request.toMap()),
     ));
 
-    return Response.fromMap(responseMap);
+    return LogdResponse.fromMap(responseMap);
   }
 }

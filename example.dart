@@ -28,7 +28,7 @@ void main() async {
   print(await Storage.get("name"));
 
   var resp = await Network.send(
-      Request('get', 'https://api.kite.trade', headers: {"test": "value"}));
+      LogdRequest('get', 'https://api.kite.trade', headers: {"test": "value"}));
 
   print(resp.body);
 }
