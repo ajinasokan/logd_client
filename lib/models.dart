@@ -35,16 +35,19 @@ class Request {
 class Response {
   Map<String, String> headers;
   String body;
+  int status;
 
   Response({
     this.headers,
     this.body,
+    this.status,
   });
 
   factory Response.fromMap(Map<String, dynamic> responseMap) {
     return Response(
       headers: responseMap["headers"].cast<String, String>(),
       body: responseMap["body"],
+      status: responseMap["status"],
     );
   }
 }
