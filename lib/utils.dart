@@ -22,11 +22,11 @@ Future<String> post(String url, String data) async {
   var req = await client.postUrl(Uri.parse(url));
   req.write(data);
   var res = await req.close();
-  client.close(force: true);
   StringBuffer builder = new StringBuffer();
   await for (String a in await res.transform(utf8.decoder)) {
     builder.write(a);
   }
+  client.close(force: true);
   return builder.toString();
 }
 
