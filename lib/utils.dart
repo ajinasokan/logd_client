@@ -20,7 +20,7 @@ List<dynamic> getParams(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) {
 Future<String> post(String url, String data) async {
   var client = HttpClient();
   var req = await client.postUrl(Uri.parse(url));
-  req.write(data);
+  req.add(utf8.encode(data));
   var res = await req.close();
   StringBuffer builder = new StringBuffer();
   await for (String a in await res.transform(utf8.decoder)) {
