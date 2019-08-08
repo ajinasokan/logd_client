@@ -13,7 +13,11 @@ int _port = 1234;
 bool _enableLogs = Logd.isInDebug;
 
 class Logd {
+  static bool bypass = false;
+
   static bool get isInDebug {
+    if (bypass) return false;
+
     bool inDebugMode = false;
     assert(inDebugMode = true);
     return inDebugMode;
